@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --font-sans: var(--app-font-sans);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 220 20% 7%;
+  --foreground: 220 10% 88%;
+  --card: 220 18% 11%;
+  --card-foreground: 220 10% 88%;
+  --card-border: 220 15% 17%;
+  --popover: 220 18% 11%;
+  --popover-foreground: 220 10% 88%;
+  --popover-border: 220 15% 17%;
+  --primary: 22 97% 46%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 220 15% 20%;
+  --secondary-foreground: 220 10% 88%;
+  --muted: 220 15% 16%;
+  --muted-foreground: 220 10% 56%;
+  --accent: 220 15% 18%;
+  --accent-foreground: 220 10% 88%;
+  --destructive: 0 70% 50%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 220 15% 18%;
+  --input: 220 15% 18%;
+  --ring: 22 97% 46%;
+  --sidebar: 220 20% 9%;
+  --sidebar-foreground: 220 10% 88%;
+  --sidebar-border: 220 15% 16%;
+  --sidebar-primary: 22 97% 46%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 220 15% 18%;
+  --sidebar-accent-foreground: 220 10% 88%;
+  --sidebar-ring: 22 97% 46%;
+  --app-font-sans: 'Inter', system-ui, sans-serif;
+  --app-font-mono: 'Menlo', monospace;
+  --radius: 0.5rem;
+  --opaque-button-border-intensity: 9;
+  --primary-border: hsl(22 97% 38%);
+  --secondary-border: hsl(220 15% 28%);
+  --muted-border: hsl(220 15% 24%);
+  --accent-border: hsl(220 15% 26%);
+  --destructive-border: hsl(0 70% 42%);
+  --sidebar-primary-border: hsl(22 97% 38%);
+  --sidebar-accent-border: hsl(220 15% 26%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+canvas {
+  display: block;
+}
